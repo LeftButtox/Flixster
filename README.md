@@ -24,6 +24,8 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 ### App Walkthough GIF
 <img src="https://i.imgur.com/48gOKZj.gif" width=250><br>
 
+![](FlixsterWalkthroughGIF.gif)
+
 ### Notes
 Describe any challenges encountered while building the app.
 I accidentally deleted part of a dependency and gradle failed to sync with my project until I looked through the build.gradle script again
