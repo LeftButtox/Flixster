@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
+import com.bumptech.glide.request.RequestOptions;
 import com.example.flixster.DetailActivity;
 import com.example.flixster.R;
 import com.example.flixster.models.Movie;
@@ -86,7 +88,21 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder>{
             else{ // movieURL is portrait
                 imageURL = movie.getPosterPath();
             }
-            Glide.with(context).load(imageURL).into(ivPoster);
+
+            RequestOptions requestOptions = new RequestOptions();
+            requestOptions = requestOptions.transform(new RoundedCorners(50));
+
+
+            Glide.with(context).load(imageURL).apply(requestOptions).into(ivPoster);
+
+//            Glide.with(context).load(imageURL).into(ivPoster);
+
+
+            // trying to add white space in between the items by adding on at the end
+//            DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(context,
+//                    context.getResources().getConfiguration().orientation);
+//            recyclerView.addItemDecoration(dividerItemDecoration);
+
 
             // 1. Make click listener on whole row
 
